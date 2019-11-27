@@ -96,14 +96,14 @@ namespace CarLot
             while (keepTrying)
             {
                 Console.WriteLine("Do you want to add a New or a Used car");
-                carChoice = Console.ReadLine();
-                if (carChoice.ToLower() != "used" || carChoice.ToLower() != "new")
+                carChoice = Console.ReadLine().ToLower();
+                if (carChoice == "used" || carChoice == "new")
                 {
-                    Console.WriteLine("That is not correct please make a choice of New or Used");
+                    keepTrying = false;
                 }
                 else
                 {
-                    keepTrying = false;
+                    Console.WriteLine("That is not correct please make a choice of New or Used");
                 }
             }
 
