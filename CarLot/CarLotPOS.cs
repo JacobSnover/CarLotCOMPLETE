@@ -21,6 +21,7 @@ namespace CarLot
         public static void StartCarLotPOS()
         {
             GetCurrentInventory();
+            MainMenu();
         }
         #endregion
 
@@ -28,7 +29,7 @@ namespace CarLot
         private static void GetCurrentInventory()
         {
             //first point the StreamReader object at the text file that holds the current inventory in CSV format
-            StreamReader sr = new StreamReader(@"..\CarLotDB.txt");
+            StreamReader sr = new StreamReader(@"C:\Users\ShaKy\Source\Repos\CarLotCOMPLETE\CarLot\CarLotDB.txt");
 
             //string array to hold the split CSV row before parsing into necessary Car object
             string[] csvArray;
@@ -66,7 +67,7 @@ namespace CarLot
         private static void SaveCurrentInventory()
         {
             //create new streamwriter object
-            StreamWriter sw = new StreamWriter(@"C:\Users\ShaKy\Source\Repos\CarLotAHBC\CarLot\CarLotDB.txt");
+            StreamWriter sw = new StreamWriter(@"..\CarLotCOMPLETE\CarLot\CarLotDB.txt");
 
             //iterate through our list of cars and first make CSV string out of the objects data, and then write that data to the CSV text file
             foreach (Car car in currentInventory)
@@ -105,6 +106,7 @@ namespace CarLot
 
                 if(userChoice.ToLower() == "quit" || userChoice == "4")
                 {
+                    SaveCurrentInventory();
                     continueProgram = false;
                 }
                 else if (userChoice == "1")

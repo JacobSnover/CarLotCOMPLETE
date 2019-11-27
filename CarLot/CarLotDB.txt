@@ -1,1 +1,2 @@
-Vehicle:  Toyota          Prius           2012
+1,toyota,prius,2019
+2,ford,fiesta,2012,168000
